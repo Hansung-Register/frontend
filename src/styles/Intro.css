@@ -1,0 +1,48 @@
+/* 전체 화면 고정 레이아웃: 루트는 fixed 전체 화면, 내부 컨테이너가 100vh 스냅 스크롤을 담당하도록 수정. */
+
+/* 스크롤 스냅 기반 소개 화면 */
+.intro-scroll-root {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* 내부 컨테이너가 스크롤 담당 */
+  background: #f8fafc;
+  z-index: 1; /* 필요 시 메뉴보다 위에 오게 값 조정 */
+}
+.intro-scroll-container {
+  height: 100vh; /* 뷰포트 높이와 동일 */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* 기존 단일 섹션 레이아웃(레거시) */
+.intro-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 32px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.intro-container h1 {
+  color: #1a237e;
+  margin-bottom: 16px;
+}
+.intro-container p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.intro-container ul {
+  list-style: disc inside;
+  text-align: left;
+  margin: 16px 0 24px 0;
+  padding-left: 0;
+}
+.intro-footer {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 24px;
+}
