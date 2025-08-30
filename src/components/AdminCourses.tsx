@@ -34,7 +34,7 @@ const AdminCourses: React.FC = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/courses/admin/all", { credentials: "include" });
+      const res = await fetch("http://3.39.123.47/api/courses/admin/all", { credentials: "include" });
       if (!res.ok) throw new Error("목록 조회 실패");
       const json = await res.json();
       const list: any[] = Array.isArray(json?.data) ? json.data : [];
@@ -81,7 +81,7 @@ const AdminCourses: React.FC = () => {
     try {
       const payload: any = { name: name.trim(), remain, basket };
       if (time !== '' && typeof time === 'number') payload.time = time; // time(Long) 포함
-      const res = await fetch("/api/courses/add", {
+      const res = await fetch("http://3.39.123.47/api/courses/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -110,7 +110,7 @@ const AdminCourses: React.FC = () => {
       if (editRemain !== '' && typeof editRemain === 'number') payload.remain = editRemain;
       if (editBasket !== '' && typeof editBasket === 'number') payload.basket = editBasket;
       if (editTime !== '' && typeof editTime === 'number') payload.time = editTime;
-      const res = await fetch(`/api/courses/update/${editId}`, {
+      const res = await fetch(`http://3.39.123.47/api/courses/update/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -139,7 +139,7 @@ const AdminCourses: React.FC = () => {
     const ok = window.confirm("정말 삭제하시겠습니까?");
     if (!ok) return;
     try {
-      const res = await fetch(`/api/courses/delete/${courseId}`, {
+      const res = await fetch(`http://3.39.123.47/api/courses/delete/${courseId}`, {
         method: "DELETE",
         credentials: "include",
       });

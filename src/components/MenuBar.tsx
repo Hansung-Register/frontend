@@ -24,7 +24,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ page, setPage }) => {
     if (resetLoading) return;
     setResetLoading(true);
     try {
-      const res = await fetch('/api/apply/reset', { method: 'POST', credentials: 'include' });
+      const res = await fetch('http://3.39.123.47/api/apply/reset', { method: 'POST', credentials: 'include' });
       if (res.ok) {
         setShowResetModal(true);
       } else {

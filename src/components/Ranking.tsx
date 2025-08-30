@@ -21,7 +21,7 @@ const Ranking: React.FC = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/apply/result/all", { credentials: "include" })
+    fetch("http://3.39.123.47/api/apply/result/all", { credentials: "include" })
       .then(res => res.ok ? res.json() : Promise.reject(res))
       .then(data => {
         // data.data가 배열

@@ -17,7 +17,7 @@ const CourseList: React.FC<CourseListProps> = ({ onNextClick, onBackClick }) => 
       setLoading(true);
       setError('');
       try {
-        const response = await fetch('http://localhost:8080/api/courses/all');
+        const response = await fetch('http://3.39.123.47/api/courses/all');
         if (response.ok) {
           const data = await response.json();
           setCourses(Array.isArray(data?.data) ? data.data : []);
@@ -36,7 +36,6 @@ const CourseList: React.FC<CourseListProps> = ({ onNextClick, onBackClick }) => 
   return (
     <div className="course-list-container">
       <div className="course-banner">무슨 과목부터 신청할지 전략을 수립하세요!</div>
-        <div className="course-list">장바구니엔 다음과 같은 순서로 담겨있어요!</div>
       <h2>전체 과목 목록</h2>
       {loading ? (
         <p>불러오는 중...</p>

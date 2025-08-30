@@ -43,8 +43,8 @@ const RegisterWait: React.FC<RegisterWaitProps> = ({ onGoClick }) => {
     useEffect(() => {
         if (secondsLeft === 0 && localStorage.getItem("registerWaitReady") !== "true") {
             localStorage.setItem("registerWaitReady", "true");
-            console.log("[수강신청 시작 API 호출] POST /api/apply/start");
-            fetch("/api/apply/start", { method: "POST" })
+            console.log('[수강신청 시작 API 호출] POST /api/apply/start');
+            fetch('http://3.39.123.47/api/apply/start', { method: 'POST' })
                 .then((res) => {
                     if (!res.ok) throw new Error("API 실패");
                     return res.text();

@@ -20,7 +20,7 @@ const Signup: React.FC<SignupProps> = ({ onBackClick, onSignupSuccess }) => {
 
   useEffect(() => {
     // 회원가입 페이지 진입 시 수강신청 결과 조회
-    fetch("/api/apply/result/my", { credentials: "include" })
+    fetch("http://3.39.123.47/api/apply/result/my", { credentials: "include" })
       .then(res => res.ok ? res.json() : Promise.reject(res))
       .then(data => {
         if (data && typeof data === 'object') {
@@ -48,7 +48,7 @@ const Signup: React.FC<SignupProps> = ({ onBackClick, onSignupSuccess }) => {
     try {
       // studentId는 숫자로 변환
       const payload = { studentId: Number(studentId), name };
-      const response = await fetch('/api/apply/register/save', {
+      const response = await fetch('http://3.39.123.47/api/apply/register/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -75,7 +75,7 @@ const Signup: React.FC<SignupProps> = ({ onBackClick, onSignupSuccess }) => {
   // 뒤로가기 시 /api/apply/reset 호출
   const handleBackClick = async () => {
     try {
-      await fetch('/api/apply/reset', { method: 'POST', credentials: 'include' });
+      await fetch('http://3.39.123.47/api/apply/reset', { method: 'POST', credentials: 'include' });
     } catch (e) {
       // 실패해도 무시하고 뒤로가기
     }

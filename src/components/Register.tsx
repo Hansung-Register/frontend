@@ -101,7 +101,7 @@ const Register: React.FC = () => {
         setLoading(true);
         setError(null);
 
-        fetch("/api/courses/all", { credentials: "include" })
+        fetch("http://3.39.123.47/api/courses/all", { credentials: "include" })
             .then(async (res) => {
                 const contentType = res.headers.get("content-type");
                 if (!res.ok) {
@@ -179,7 +179,7 @@ const Register: React.FC = () => {
 
         try {
             console.log("[수강신청 API 호출] /api/apply/register/" + course.id, course);
-            const res = await fetch(`/api/apply/register/${course.id}`, {
+            const res = await fetch(`http://3.39.123.47/api/apply/register/${course.id}`, {
                 method: "POST",
                 credentials: "include",
             });
