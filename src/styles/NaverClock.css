@@ -5,7 +5,7 @@
   height: 100%;
 }
 .second_circle._timer_donut {
-  background: #fff;
+  background: transparent; /* 투명 처리로 외부 배경이 비치도록 */
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(3,170,90,0.08);
   padding: 32px;
@@ -13,4 +13,3 @@
   justify-content: center;
   align-items: center;
 }
-

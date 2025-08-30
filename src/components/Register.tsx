@@ -227,7 +227,6 @@ const Register: React.FC = () => {
         return map;
     }, [selected]);
 
-    const totalHeight = (END_HOUR - START_HOUR) * ROW_PX;
 
     return (
         <div className="register-page">

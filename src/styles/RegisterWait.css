@@ -2,11 +2,14 @@
     display: flex;
     gap: 24px;
     align-items: flex-start;
+    /* 배경색이 초마다 변할 때 부드러운 전환 */
+    transition: background-color 0.4s ease;
 }
 
 .register-wait-left {
     flex: 1 1 62%;
     max-width: 820px;
+    background: transparent; /* 투명 처리 */
 }
 
 .register-wait-right {
@@ -14,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    background: transparent; /* 투명 처리 */
 }
 
 /* 상단 제목줄 */
