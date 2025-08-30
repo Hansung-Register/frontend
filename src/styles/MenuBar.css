@@ -1,0 +1,47 @@
+.menu-bar {
+  display: flex;
+  gap: 12px;
+  background: #f5f5f7;
+  padding: 16px 0 12px 0;
+  justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+}
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #1976d2;
+  transition: background 0.2s, color 0.2s;
+}
+.menu-btn.active, .menu-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* 초기화 버튼 (우측 구석 고정) */
+.menu-bar { position: fixed; }
+.menu-reset-btn {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #ef4444; /* red-500 */
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-reset-btn:hover { background: #dc2626; }
+.menu-reset-btn:disabled {
+  background: #f87171;
+  cursor: default;
+}
