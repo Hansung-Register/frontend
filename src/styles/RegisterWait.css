@@ -1,0 +1,112 @@
+.register-wait-container {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.register-wait-left {
+    flex: 1 1 62%;
+    max-width: 820px;
+}
+
+.register-wait-right {
+    flex: 1 1 38%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 상단 제목줄 */
+.notice-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.muted { color: #6b7280; }
+.accent-red { color: #d92c2c; }
+
+/* 카드 공통 */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.card .card-row { font-size: 15px; }
+.card .strong { font-weight: 700; }
+
+/* 파란 카드(가득 채운 느낌) */
+.card-blue {
+    border-color: #2b6cb0;
+    background: #eef6ff;
+}
+
+/* 파란 테두리만 */
+.card-blue-outline {
+    border-color: #2b6cb0;
+    background: #f7fbff;
+}
+
+/* 초록, 분홍 */
+.card-green {
+    border-color: #10b981;
+    background: #ecfdf5;
+}
+.card-pink {
+    border-color: #fca5a5;
+    background: #fff1f2;
+}
+
+/* 섹션 헤더 */
+.section {
+    font-weight: 800;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.section-red {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+.section-blue {
+    background: #e0f2fe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+/* 리스트 */
+.bullets {
+    margin: 8px 0 14px;
+    padding-left: 18px;
+    color: #374151;
+}
+.bullets li {
+    margin: 4px 0;
+    line-height: 1.5;
+}
+
+/* 파란 링크 스타일 */
+.link-blue { color: #2563eb; }
+.link-green { color: #059669; }
+
+/* 요구사항: 작은 파란색 "수강신청 Go" 버튼 (문구 아래에) */
+.register-go-link {
+    margin-top: 6px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #2563eb;           /* 파란색 */
+    font-size: 12px;          /* 작게 */
+    cursor: pointer;
+    text-decoration: underline;
+}
+.register-go-link:hover { opacity: 0.8; }
+
+/* 반응형 조금 */
+@media (max-width: 920px) {
+    .register-wait-container { flex-direction: column; }
+    .register-wait-right { order: -1; margin-bottom: 12px; }
+}

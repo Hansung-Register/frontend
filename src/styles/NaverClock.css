@@ -1,0 +1,16 @@
+.naver-clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.second_circle._timer_donut {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(3,170,90,0.08);
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
