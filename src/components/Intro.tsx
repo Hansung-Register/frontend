@@ -35,7 +35,7 @@ const Intro: React.FC<IntroProps> = ({ onCoursesClick }) => {
       },
       {
         title: "수강신청",
-        description: "수강신청 버튼을 누르면 다음과 같은 알림창이 나와요!(현실반영)",
+        description: "수강신청 버튼을 누르면 다음과 같은 알림창이 나와요!(성공 시 1번, 실패 시 2번)",
         images: ["/register_alert1.png", "/register_alert2.png"],
       },
       {
