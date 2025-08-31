@@ -65,48 +65,77 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div style={{ maxWidth: 420, margin: "80px auto", padding: 24, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff" }}>
-            <h2 style={{ marginBottom: 16, fontWeight: 800 }}>로그인</h2>
-            <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
-                <label style={{ display: "grid", gap: 6 }}>
-                    <span>학번</span>
-                    <input
-                        type="number"
-                        value={studentId}
-                        onChange={(e) => setStudentId(e.target.value)}
-                        placeholder="예: 20201234"
-                        style={{ padding: "10px 12px", border: "1px solid #cbd5e1", borderRadius: 8 }}
-                        required
-                    />
-                </label>
-                <label style={{ display: "grid", gap: 6 }}>
-                    <span>이름</span>
-                    <input
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="이름을 입력하세요"
-                        style={{ padding: "10px 12px", border: "1px solid #cbd5e1", borderRadius: 8 }}
-                        required
-                    />
-                </label>
-                <button
-                    type="submit"
-                    disabled={loading}
+        <>
+            {/* 상단 배너 이미지: 폼보다 넓게 */}
+            <div style={{ maxWidth: 400, margin: "14px auto 0" }}>
+                <img
+                    src="/login_dcnm.png"
+                    alt="로그인 배너"
                     style={{
-                        padding: "10px 12px",
-                        background: "#2563eb",
-                        color: "#fff",
-                        border: "none",
+                        width: "100%",
+                        margin: "-300px auto -100px",
+                        height: "auto",
                         borderRadius: 10,
-                        fontWeight: 800,
-                        cursor: "pointer",
+                        objectFit: "cover",
+                        display: "block",
                     }}
-                >
-                    {loading ? "로그인 중..." : "로그인"}
-                </button>
-                {err && <div style={{ color: "#ef4444", marginTop: 6 }}>{err}</div>}
-            </form>
-        </div>
+                />
+            </div>
+
+            {/* 로그인 폼: 더 위로 올림(음수 margin-top) */}
+            <div
+                style={{
+                    maxWidth: 300,
+                    margin: "-100px auto 10px",
+                    padding: 24,
+                    border: "1px solid #e5e7eb",
+                    borderRadius: 12,
+                    background: "#fff",
+                }}
+            >
+                <h2 style={{ marginBottom: 14, fontWeight: 800 }}>로그인</h2>
+
+                <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
+                    <label style={{ display: "grid", gap: 6 }}>
+                        <span>학번</span>
+                        <input
+                            type="number"
+                            value={studentId}
+                            onChange={(e) => setStudentId(e.target.value)}
+                            placeholder="예: 20201234"
+                            style={{ padding: "10px 12px", border: "1px solid #cbd5e1", borderRadius: 8 }}
+                            required
+                        />
+                    </label>
+                    <label style={{ display: "grid", gap: 6 }}>
+                        <span>이름</span>
+                        <input
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="이름을 입력하세요"
+                            style={{ padding: "10px 12px", border: "1px solid #cbd5e1", borderRadius: 8 }}
+                            required
+                        />
+                    </label>
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        style={{
+                            padding: "10px 12px",
+                            background: "#2563eb",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: 10,
+                            fontWeight: 800,
+                            cursor: "pointer",
+                        }}
+                    >
+                        {loading ? "로그인 중..." : "로그인"}
+                    </button>
+                    {err && <div style={{ color: "#ef4444", marginTop: 6 }}>{err}</div>}
+                </form>
+            </div>
+        </>
     );
 };
 
