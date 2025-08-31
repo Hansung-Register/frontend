@@ -9,7 +9,10 @@ interface RankingItem {
     name: string;
 }
 
-const medalColors = ["#ffd700", "#c0c0c0", "#cd7f32"]; // 1,2,3등
+// 배지(원형) 배경은 더 선명한 금색(#FFD700)으로,
+// 행 글자색은 가독성을 위해 약간 어두운 톤으로 분리
+const medalBgColors = ["#FFD700", "#7a7a7a", "#cd7f32"]; // 1,2,3등 배지 배경
+const medalTextColors = ["#8B7500", "#5a5a5a", "#a05a2a"]; // 1,2,3등 행 텍스트
 
 const Ranking: React.FC = () => {
     const [ranking, setRanking] = useState<RankingItem[]>([]);
@@ -101,7 +104,7 @@ const Ranking: React.FC = () => {
                                     key={`${item.rank}-${item.studentId}`}
                                     style={{
                                         background: isTop3
-                                            ? medalColors[item.rank - 1] + "22"
+                                            ? medalBgColors[item.rank - 1] + "44" // 더 진한 배경 투명도
                                             : myRow
                                                 ? "#e0f2fe"
                                                 : idx % 2 === 0
@@ -109,7 +112,7 @@ const Ranking: React.FC = () => {
                                                     : "#fff",
                                         fontWeight: isTop3 ? 700 : myRow ? 700 : 400,
                                         fontSize: isTop3 ? "1.1rem" : "1rem",
-                                        color: isTop3 ? medalColors[item.rank - 1] : "#222",
+                                        color: isTop3 ? medalTextColors[item.rank - 1] : "#222",
                                         borderBottom: "1px solid #eee",
                                         transition: "background 0.2s",
                                     }}
@@ -123,7 +126,7 @@ const Ranking: React.FC = () => {
                                                     height: 32,
                                                     lineHeight: "32px",
                                                     borderRadius: "50%",
-                                                    background: medalColors[item.rank - 1],
+                                                    background: medalBgColors[item.rank - 1], // 선명한 금/은/동
                                                     color: "#fff",
                                                     fontWeight: 900,
                                                     fontSize: "1.1rem",
@@ -131,8 +134,8 @@ const Ranking: React.FC = () => {
                                                     marginRight: 4,
                                                 }}
                                             >
-                          {item.rank}
-                        </span>
+                                                    {item.rank}
+                                                </span>
                                         ) : (
                                             item.rank
                                         )}
