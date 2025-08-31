@@ -30,12 +30,12 @@ const Intro: React.FC<IntroProps> = ({ onCoursesClick }) => {
       },
       {
         title: "수강신청",
-        description: "수강신청 페이지에서 원하는 과목을 장바구니에 담고, 수강신청을 시도해보세요!",
+        description: "수강신청 페이지에서 신청 버튼을 눌러 수강신청을 시도해보세요!",
         images: ["/register.png"],
       },
       {
         title: "수강신청",
-        description: "수강신청 버튼을 누르면 다음과 같은 알림창이 나와요!(성공 시 1번, 실패 시 2번)",
+        description: "수강신청 버튼을 누르면 다음과 같은 알림창이 나와요!(성공 시 한 번, 실패 시 두 번)",
         images: ["/register_alert1.png", "/register_alert2.png"],
       },
       {
