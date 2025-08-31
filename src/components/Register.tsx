@@ -211,7 +211,8 @@ const Register: React.FC = () => {
                 };
                 nextSelected = [...selected, courseWithColor];
                 setSelected(nextSelected);
-                window.alert("수강신청 되었습니다.");
+                // ✅ 성공 알림창 제거 (요청사항)
+                // window.alert("수강신청 되었습니다.");
             } else if (data?.isRegistered === false) {
                 window.alert("해당 분반의 정원이 마감되었습니다.");
             }
