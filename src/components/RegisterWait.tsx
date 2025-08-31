@@ -100,6 +100,35 @@ const RegisterWait: React.FC<RegisterWaitProps> = ({ onGoClick }) => {
         return () => window.removeEventListener("popstate", handlePopState);
     }, [authChecked]);
 
+    // ✅ 카운트다운이 시작되면(15초에서 감소 시작) 새로고침(F5/⌘R/Ctrl+R) 차단 + 새로고침 경고
+    useEffect(() => {
+        if (!authChecked) return;
+        const countdownStarted = secondsLeft > 0 && secondsLeft < COUNTDOWN_START;
+        if (!countdownStarted) return;
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            const key = e.key.toLowerCase();
+            // F5, Ctrl+R, Cmd+R 막기
+            if (key === "f5" || ((key === "r" || e.code === "KeyR") && (e.ctrlKey || e.metaKey))) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        };
+        const onBeforeUnload = (e: BeforeUnloadEvent) => {
+            // 브라우저 기본 확인 다이얼로그 표시
+            e.preventDefault();
+            e.returnValue = "";
+        };
+
+        window.addEventListener("keydown", onKeyDown, true);
+        window.addEventListener("beforeunload", onBeforeUnload);
+
+        return () => {
+            window.removeEventListener("keydown", onKeyDown, true);
+            window.removeEventListener("beforeunload", onBeforeUnload);
+        };
+    }, [authChecked, secondsLeft]);
+
     const handleGoClick = () => {
         localStorage.removeItem("registerWaitReady");
         onGoClick();
